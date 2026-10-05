@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "propusher": {
+      "type": "http",
+      "url": "https://app.propusher.com/mcp"
+    }
+  }
+}

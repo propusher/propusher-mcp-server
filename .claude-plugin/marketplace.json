@@ -1,0 +1,7 @@
+{
+  "name": "Propusher",
+  "owner": { "name": "Propusher" },
+  "plugins": [
+    { "name": "Propusher", "source": "./", "description": "Propusher tools for Claude" }
+  ]
+}
