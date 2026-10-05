@@ -5,5 +5,8 @@
   "author": { "name": "Propusher" },
   "license": "Apache-2.0",
   "icon": "./icon.png",
-  "privacyPolicyUrl": "https://propusher.com/terms-privacy"
+  "homepage": "https://propusher.com/",
+  "supportUrl": "https://propusher.com/help",
+  "privacyPolicyUrl": "https://propusher.com/terms-privacy",
+  "termsOfServiceUrl": "https://propusher.com/terms-privacy"
 }
