@@ -1,5 +1,9 @@
 {
   "name": "propusher",
   "version": "1.0.0",
-  "description": "Propusher tools for Claude"
+  "description": "Propusher tools for Claude",
+  "author": { "name": "Propusher" },
+  "license": "Apache-2.0",
+  "icon": "./icon.png",
+  "privacyPolicyUrl": "https://propusher.com/terms-privacy"
 }
