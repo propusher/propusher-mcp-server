@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developers.openai.com/plugins/schemas/chatgpt-app-submission.v1.json",
+  "$schema": "https://developers.openai.com/apps-sdk/schemas/chatgpt-app-submission.v1.json",
   "schema_version": 1,
   "app_info": {
     "display_name": "Propusher",
@@ -52,7 +52,7 @@
       "justifications": {
         "read_only_justification": "Writes: changes one of the coach's own exercises.",
         "open_world_justification": "Talks only to Propusher's own API for the signed-in coach's account; it never reaches the open web or third parties.",
-        "destructive_justification": "Marked destructive because fields and lists it is given replace the existing ones rather than merge. By default the change is held as a draft that the coach applies or discards in Propusher, so the published version is untouched; it goes live directly only when live: true is sent."
+        "destructive_justification": "Overwrites the given fields and lists of the coach's own item, held by default as a draft the coach applies or discards in Propusher, and live only when live: true is sent."
       }
     },
     "preview_animation": {
@@ -76,7 +76,7 @@
       "justifications": {
         "read_only_justification": "Writes: changes the 3D animation of one of the coach's own exercises.",
         "open_world_justification": "Talks only to Propusher's own API for the signed-in coach's account; it never reaches the open web or third parties.",
-        "destructive_justification": "Marked destructive because fields and lists it is given replace the existing ones rather than merge. By default the change is held as a draft that the coach applies or discards in Propusher, so the published version is untouched; it goes live directly only when live: true is sent. The replaced animation stays recoverable until the coach applies the draft."
+        "destructive_justification": "Overwrites the given fields and lists of the coach's own item, held by default as a draft the coach applies or discards in Propusher, and live only when live: true is sent."
       }
     },
     "list_workouts": {
@@ -124,7 +124,7 @@
       "justifications": {
         "read_only_justification": "Writes: changes one of the coach's own workout templates.",
         "open_world_justification": "Talks only to Propusher's own API for the signed-in coach's account; it never reaches the open web or third parties.",
-        "destructive_justification": "Marked destructive because fields and lists it is given replace the existing ones rather than merge. By default the change is held as a draft that the coach applies or discards in Propusher, so the published version is untouched; it goes live directly only when live: true is sent."
+        "destructive_justification": "Overwrites the given fields and lists of the coach's own item, held by default as a draft the coach applies or discards in Propusher, and live only when live: true is sent."
       }
     },
     "list_questionnaires": {
@@ -172,7 +172,7 @@
       "justifications": {
         "read_only_justification": "Writes: changes one of the coach's own questionnaires.",
         "open_world_justification": "Talks only to Propusher's own API for the signed-in coach's account; it never reaches the open web or third parties.",
-        "destructive_justification": "Marked destructive because fields and lists it is given replace the existing ones rather than merge. By default the change is held as a draft that the coach applies or discards in Propusher, so the published version is untouched; it goes live directly only when live: true is sent."
+        "destructive_justification": "Overwrites the given fields and lists of the coach's own item, held by default as a draft the coach applies or discards in Propusher, and live only when live: true is sent."
       }
     },
     "publish_draft": {
@@ -184,7 +184,7 @@
       "justifications": {
         "read_only_justification": "Writes: applies a pending draft to one of the coach's own items.",
         "open_world_justification": "Talks only to Propusher's own API for the signed-in coach's account; it never reaches the open web or third parties.",
-        "destructive_justification": "Marked destructive because the draft replaces the published values that clients see. It is used only when the coach asks, never deletes an item, and fails when there is no draft."
+        "destructive_justification": "Applies a pending draft over the published values clients see; it never deletes an item and fails when there is no draft."
       }
     },
     "list_programs": {
@@ -232,7 +232,7 @@
       "justifications": {
         "read_only_justification": "Writes: changes one of the coach's own programs.",
         "open_world_justification": "Talks only to Propusher's own API for the signed-in coach's account; it never reaches the open web or third parties.",
-        "destructive_justification": "Marked destructive because fields and lists it is given replace the existing ones rather than merge. By default the change is held as a draft that the coach applies or discards in Propusher, so the published version is untouched; it goes live directly only when live: true is sent."
+        "destructive_justification": "Overwrites the given fields and lists of the coach's own item, held by default as a draft the coach applies or discards in Propusher, and live only when live: true is sent."
       }
     }
   },
@@ -240,64 +240,68 @@
     {
       "description": "Search the coach's own exercises and Propusher's library.",
       "user_prompt": "Which hamstring exercises do I have in Propusher?",
+      "file_attachment_urls": null,
       "tools_triggered": "list_exercises",
-      "expected_output": "A list of hamstring exercises from the coach's library (and, if few, from the Propusher library), each with its title and equipment."
+      "expected_output": "A list of hamstring exercises from the coach's library (and, if few, from the Propusher library), each with its title and equipment.",
+      "expected_output_url": null
     },
     {
       "description": "Build a workout template from existing exercises; created live.",
       "user_prompt": "Build a 45-minute lower-body strength workout in Propusher from my exercises.",
+      "file_attachment_urls": null,
       "tools_triggered": "list_exercises, create_workout",
-      "expected_output": "A new workout template with 5-7 existing exercises, sets, reps and rest, classified as strength / lower body, plus a link to open it in Propusher."
+      "expected_output": "A new workout template with 5-7 existing exercises, sets, reps and rest, classified as strength / lower body, plus a link to open it in Propusher.",
+      "expected_output_url": null
     },
     {
       "description": "Create a multi-week program on the day grid.",
       "user_prompt": "Make a 4-week beginner running program in Propusher, three runs a week.",
+      "file_attachment_urls": null,
       "tools_triggered": "list_workouts, create_program",
-      "expected_output": "A new 4-week program with three run workouts per week on separate days and a link to it in Propusher."
+      "expected_output": "A new 4-week program with three run workouts per week on separate days and a link to it in Propusher.",
+      "expected_output_url": null
     },
     {
       "description": "Create a questionnaire.",
       "user_prompt": "Write a weekly check-in questionnaire for my clients in Propusher covering sleep, stress and soreness.",
+      "file_attachment_urls": null,
       "tools_triggered": "create_questionnaire",
-      "expected_output": "A new questionnaire with scale questions for sleep, stress and soreness and an optional comment, plus a link to it."
+      "expected_output": "A new questionnaire with scale questions for sleep, stress and soreness and an optional comment, plus a link to it.",
+      "expected_output_url": null
     },
     {
       "description": "Edit an existing workout; the change is saved as a draft for the coach.",
       "user_prompt": "In my Propusher workout \"Upper Body A\", change the bench press to 4 sets of 6.",
+      "file_attachment_urls": null,
       "tools_triggered": "list_workouts, get_workout, update_workout",
-      "expected_output": "Confirms the bench press entry now has 4x6, says the change is waiting as a draft to apply in Propusher, and links to the workout."
-    },
-    {
-      "description": "Publish a pending draft when the coach asks.",
-      "user_prompt": "Publish the draft changes on my \"Upper Body A\" workout in Propusher.",
-      "tools_triggered": "list_workouts, publish_draft",
-      "expected_output": "Confirms the draft is now live for clients and lists the fields that changed."
-    },
-    {
-      "description": "Animate one of the coach's own exercises, previewing before saving.",
-      "user_prompt": "Add a 3D animation to my Propusher exercise \"Bodyweight squat\".",
-      "tools_triggered": "list_exercises, get_exercise, preview_animation, set_exercise_animation",
-      "expected_output": "Shows rendered key poses of the squat, then saves the animation as a draft on the exercise and links to it."
+      "expected_output": "Confirms the bench press entry now has 4x6, says the change is waiting as a draft to apply in Propusher, and links to the workout.",
+      "expected_output_url": null
     }
   ],
   "negative_test_cases": [
     {
       "description": "General fitness advice with no reference to Propusher or the coach's library should be answered by ChatGPT alone.",
-      "user_prompt": "How many sets per week should a beginner do for muscle growth?"
+      "user_prompt": "How many sets per week should a beginner do for muscle growth?",
+      "file_attachment_urls": null,
+      "tools_triggered": null,
+      "expected_output": "The app should not be invoked because the request is outside its supported workflows.",
+      "expected_output_url": null
     },
     {
       "description": "Personal workout logging is a client-side action; the app only reaches the coach's library.",
-      "user_prompt": "Log that I ran 5 km today."
+      "user_prompt": "Log that I ran 5 km today.",
+      "file_attachment_urls": null,
+      "tools_triggered": null,
+      "expected_output": "The app should not be invoked because the request is outside its supported workflows.",
+      "expected_output_url": null
     },
     {
       "description": "Clients, teams and calendars are out of scope; no tool reaches them.",
       "user_prompt": "Show me which of my clients missed their workouts this week in Propusher.",
-      "expected_output": "Explains that the Propusher app in ChatGPT only reaches the coach's library, not clients or calendars, and points to the Propusher web app."
-    },
-    {
-      "description": "Deleting is not possible; there is no delete tool.",
-      "user_prompt": "Delete all my old workouts in Propusher.",
-      "expected_output": "Explains that items can't be deleted from ChatGPT and that the coach can delete them in Propusher."
+      "file_attachment_urls": null,
+      "tools_triggered": null,
+      "expected_output": "The app should not be invoked because the request is outside its supported workflows.",
+      "expected_output_url": null
     }
   ]
 }
