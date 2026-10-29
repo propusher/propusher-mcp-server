@@ -19,7 +19,7 @@ The plugin ships six Agent Skills, loaded when you work with Propusher:
 |---|---|
 | [`propusher`](skills/propusher/SKILL.md) | connecting, how the tools fit together, drafts (edits wait for the coach, creates are live, `publish_draft` on request), good practice |
 | [`build-exercise`](skills/build-exercise/SKILL.md) | finding, creating and editing exercises; equipment and muscle groups read from the animation |
-| [`animate-exercise`](skills/animate-exercise/SKILL.md) | writing and checking an exercise's 3D animation |
+| [`animate-exercise`](skills/animate-exercise/SKILL.md) | the 3D animation format, and writing and checking an exercise's animation |
 | [`build-workout`](skills/build-workout/SKILL.md) | workout templates: prescriptions, per-set plans, classification |
 | [`build-program`](skills/build-program/SKILL.md) | multi-week programs: workouts, questionnaires and activities on a day grid |
 | [`build-questionnaire`](skills/build-questionnaire/SKILL.md) | check-in, intake and RPE forms: question types and scales |

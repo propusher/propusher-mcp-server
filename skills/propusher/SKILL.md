@@ -26,7 +26,7 @@ Lists return summaries; the `get_` tool for an id returns the full record.
 | Kind | Read | Write |
 | --- | --- | --- |
 | Exercises | `list_exercises` (group, equipment filters), `get_exercise` | `create_exercise`, `update_exercise` |
-| Animations | `describe_animation_format`, `preview_animation` | `set_exercise_animation` |
+| Animations | `preview_animation` | `set_exercise_animation` |
 | Workouts | `list_workouts` (focus, bodyFocus, context, phase filters), `get_workout` | `create_workout`, `update_workout` |
 | Programs | `list_programs`, `get_program` | `create_program`, `update_program` |
 | Questionnaires | `list_questionnaires`, `get_questionnaire` | `create_questionnaire`, `update_questionnaire` |
