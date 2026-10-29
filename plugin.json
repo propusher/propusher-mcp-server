@@ -15,7 +15,7 @@
         "shortDescription": "Your coaching library",
         "longDescription": "For coaches who use Propusher. Find, create and edit exercises, workout templates, multi-week programs and questionnaires in your library, and animate exercises with a 3D figure. New items are saved straight away; edits wait as drafts until you apply them in Propusher. Clients, teams and calendars are not reachable, and nothing is deleted.",
         "developerName": "Propusher",
-        "category": "Productivity",
+        "category": "Other",
         "capabilities": ["Read", "Write"],
         "websiteURL": "https://propusher.com/",
         "supportURL": "https://propusher.com/help",
