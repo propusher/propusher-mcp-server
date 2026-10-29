@@ -1,10 +1,10 @@
 {
   "name": "propusher",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Propusher tools for Claude",
   "author": { "name": "Propusher" },
   "license": "Apache-2.0",
-  "icon": "./icon.png",
+  "icon": "./assets/icon.png",
   "homepage": "https://propusher.com/",
   "supportUrl": "https://propusher.com/help",
   "privacyPolicyUrl": "https://propusher.com/terms-privacy",

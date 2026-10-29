@@ -1,0 +1,34 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "propusher",
+  "version": "1.1.0",
+  "description": "Build and edit exercises, workouts, programs, questionnaires and exercise animations in your Propusher coaching library.",
+  "author": { "name": "Propusher", "url": "https://propusher.com" },
+  "homepage": "https://propusher.com/",
+  "repository": "https://github.com/propusher/propusher-mcp-server",
+  "license": "Apache-2.0",
+  "keywords": ["coaching", "training", "workouts", "fitness"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Propusher",
+        "shortDescription": "Your coaching library",
+        "longDescription": "For coaches who use Propusher. Find, create and edit exercises, workout templates, multi-week programs and questionnaires in your library, and animate exercises with a 3D figure. New items are saved straight away; edits wait as drafts until you apply them in Propusher. Clients, teams and calendars are not reachable, and nothing is deleted.",
+        "developerName": "Propusher",
+        "category": "Productivity",
+        "capabilities": ["Read", "Write"],
+        "websiteURL": "https://propusher.com/",
+        "supportURL": "https://propusher.com/help",
+        "privacyPolicyURL": "https://propusher.com/terms-privacy",
+        "termsOfServiceURL": "https://propusher.com/terms-privacy",
+        "defaultPrompt": [
+          "Build a 45-minute lower-body strength workout from my Propusher exercises.",
+          "Make a 4-week beginner running program in Propusher.",
+          "Write a weekly check-in questionnaire for my clients."
+        ],
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/icon.png"
+      }
+    }
+  }
+}
