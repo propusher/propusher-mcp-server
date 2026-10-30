@@ -1,8 +1,8 @@
 {
-  "name": "Propusher",
+  "name": "propusher",
   "owner": { "name": "Propusher" },
   "description": "Official Propusher plugins",
   "plugins": [
-    { "name": "Propusher", "source": "./", "description": "Propusher tools for Claude" }
+    { "name": "propusher", "source": "./", "description": "Propusher tools for Claude" }
   ]
 }
